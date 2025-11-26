@@ -2,10 +2,13 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const cors = require('cors'); // Import CORS
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Middleware
+app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
